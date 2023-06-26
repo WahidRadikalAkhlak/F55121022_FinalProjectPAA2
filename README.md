@@ -1,3 +1,5 @@
+# Wahid Radikal Akhlak
+# F55121022
 Analysis Algoritma
 1. Bubble Sort & Insertion Sort
    Worst Case:
