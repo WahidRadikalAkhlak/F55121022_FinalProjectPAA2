@@ -1,6 +1,7 @@
 # Wahid Radikal Akhlak
 # F55121022
 Analysis Algoritma
+
 1. Bubble Sort & Insertion Sort
    Worst Case:
         Bubble Sort: Worst case terjadi ketika elemen-elemen dalam list tidak terurut dan harus dipindahkan secara bertahap ke posisi yang benar. Dalam hal ini, setiap elemen harus membandingkan dengan setiap elemen lainnya dalam iterasi, sehingga menghasilkan jumlah langkah yang tinggi. Untuk list dengan n elemen, jumlah langkah yang diperlukan adalah sekitar n * (n - 1) / 2.
@@ -13,12 +14,36 @@ Analysis Algoritma
         Insertion Sort: Average case dalam insertion sort juga bergantung pada distribusi elemen-elemen dalam list. Secara umum, rata-rata kasus memerlukan sekitar n * (n - 1) / 4 langkah. Insertion sort cenderung lebih cepat dibandingkan dengan bubble sort untuk list yang hampir terurut, tetapi masih memiliki kompleksitas waktu yang tinggi untuk list yang tidak terurut dengan baik.
 
 2. TSP & Djikstra
-   Worst Case:
-    Algoritma TSP: Dalam algoritma TSP yang digunakan, semua kemungkinan permutasi vertex diuji. Oleh karena itu, jumlah total permutasi yang dihasilkan oleh fungsi itertools.permutations adalah N!, di mana N adalah jumlah vertex dalam graf. Dalam kasus terburuk, algoritma ini harus memeriksa semua permutasi tersebut sebelum menemukan jalur terpendek. Jadi, waktu eksekusi dalam worst case adalah O(N!).
-    Algoritma Dijkstra: Dalam algoritma Dijkstra, waktu eksekusi bergantung pada jumlah vertex dan edge dalam graf. Dalam kasus terburuk, ketika semua vertex terhubung satu sama lain, algoritma Dijkstra akan memeriksa semua edge dan vertex sebelum mencapai tujuan. Jadi, waktu eksekusi dalam worst case adalah O(V^2), di mana V adalah jumlah vertex dalam graf.
-  Best Case:
-    Algoritma TSP: Dalam kasus terbaik, jika jalur terpendek ditemukan pada permutasi pertama yang diperiksa, maka waktu eksekusi adalah konstan. Namun, ini sangat jarang terjadi dan tidak dapat diandalkan dalam praktiknya.
-    Algoritma Dijkstra: Dalam kasus terbaik, jika vertex awal adalah vertex tujuan, maka waktu eksekusi adalah konstan, yaitu O(1). Ini terjadi ketika tidak ada perluasan pencarian yang perlu dilakukan.
-  Average Case:
-    Algoritma TSP: Rata-rata kasus ini sulit untuk ditentukan secara pasti, karena melibatkan perhitungan kompleksitas kombinatorial. Namun, secara umum, waktu eksekusi rata-rata algoritma TSP akan sebanding dengan jumlah vertex dalam graf.
-    Algoritma Dijkstra: Dalam kasus rata-rata, algoritma Dijkstra memiliki kompleksitas waktu yang lebih baik daripada worst case, tetapi masih sebanding dengan jumlah vertex dan edge dalam graf. Sebagai aturan praktis, kompleksitas rata-rata algoritma Dijkstra adalah O(V^2), di mana V adalah jumlah vertex dalam graf.
+   a. Worst Case:
+      TSP (Traveling Salesman Problem):
+      Pada worst case, algoritma TSP memerlukan pengecekan semua kemungkinan permutasi jalur yang mungkin.
+      Jumlah simpul pada grafik digambarkan sebagai "n".
+      Oleh karena itu, jumlah permutasi yang mungkin adalah (n-1)!.
+      Dalam kasus ini, waktu eksekusi algoritma akan meningkat secara eksponensial dengan meningkatnya jumlah simpul.
+      Jadi, dalam worst case, kompleksitas waktu algoritma TSP adalah O((n-1)!).
+      Dijkstra:
+      Pada worst case, Dijkstra memeriksa setiap simpul dan setiap sisi dalam grafik.
+      Jika kita memiliki "V" simpul dan "E" sisi, maka kompleksitas waktu Dijkstra adalah O((V+E)log(V)) saat menggunakan heap biner sebagai antrian prioritas.
+      Jadi, dalam worst case, kompleksitas waktu algoritma Dijkstra adalah O((V+E)log(V)).
+b. Best Case:
+      TSP (Traveling Salesman Problem):
+      Dalam kasus terbaik, algoritma TSP memiliki grafik dengan sedikit simpul.
+      Jika kita hanya memiliki 2 simpul (misalnya A dan B), maka jalur terpendek adalah langsung dari A ke B.
+      Dalam kasus ini, waktu eksekusi algoritma TSP akan sangat singkat.
+      Jadi, dalam best case, kompleksitas waktu algoritma TSP adalah O(1).
+      Dijkstra:
+      Dalam kasus terbaik, algoritma Dijkstra memiliki grafik dengan simpul awal dan simpul tujuan yang berdekatan.
+      Jika kita hanya memiliki 2 simpul yang terhubung langsung (misalnya A dan B), maka jalur terpendek adalah langsung dari A ke B.
+      Dalam kasus ini, waktu eksekusi algoritma Dijkstra akan sangat singkat.
+      Jadi, dalam best case, kompleksitas waktu algoritma Dijkstra adalah O(1).
+c. Average Case:
+      TSP (Traveling Salesman Problem):
+      Rata-rata kasus TSP sangat tergantung pada struktur grafik dan jumlah simpul.
+      Dalam rata-rata kasus, algoritma TSP menggunakan pendekatan heuristik seperti Nearest Neighbor, Dynamic Programming, atau Optimal Substructure untuk mencari solusi           yang memadai.
+      Jika jumlah simpul "n" tidak terlalu besar, algoritma TSP dapat memberikan solusi yang cukup efisien dalam waktu yang masuk akal.
+      Kompleksitas waktu rata-rata algoritma TSP sangat bervariasi tergantung pada metode heuristik yang digunakan.
+      Dijkstra:
+      Dalam rata-rata kasus, algoritma Dijkstra memiliki kompleksitas waktu yang efisien.
+      Namun, kompleksitas waktu rata-rata masih tergantung pada jumlah simpul dan sisi dalam grafik.
+      Jika jumlah simpul dan sisi tidak terlalu besar, algoritma Dijkstra akan memberikan solusi dalam waktu yang masuk akal.
+      Kompleksitas waktu rata-rata algoritma Dijkstra adalah O((V+E)log(V)), di mana V adalah jumlah simpul dan E adalah jumlah sisi dalam grafik.
